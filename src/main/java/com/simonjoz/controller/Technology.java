@@ -1,15 +1,14 @@
-package com.simonjoz.contoller;
+package com.simonjoz.controller;
 
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Technology {
 
     @GetMapping("technology")
-    public String getTechnologies(Model model) {
+    public String getTechnologies() {
         return "technology";
     }
 }

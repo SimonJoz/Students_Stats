@@ -28,7 +28,7 @@
                 <!-- Content Row -->
                 <div class="row">
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Students quantity card  -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-primary shadow h-100 py-2">
                             <div class="card-body">
@@ -37,7 +37,7 @@
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Ilość (kursanci)
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${iloscKursantow}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -47,7 +47,7 @@
                         </div>
                     </div>
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Hours card  -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-success shadow h-100 py-2">
                             <div class="card-body">
@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <!-- Earnings (Monthly) Card Example -->
+                    <!-- Tasks card -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
                             <div class="card-body">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
 
-                    <!-- Pending Requests Card Example -->
+                    <!--  Technology card  -->
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-warning shadow h-100 py-2">
                             <div class="card-body">
@@ -118,13 +118,13 @@
             </div>
             <!-- /.container-fluid -->
 
-
+            <!-- Content body-->
             <div class="jumbotron">
                 <h1>Projekt zajęciowy</h1>
                 <p>Bootstrap + JSP + Spring Boot + MySQL</p>
-                <p>Dzisiaj jest: <fmt:formatDate type = "date" value = "${now}" /></p>
+                <p>Dzisiaj jest: <fmt:formatDate type = "date" value = "${now}" />.</p>
             </div>
-
+            <!-- End of content body-->
 
         </div>
         <!-- End of Main Content -->

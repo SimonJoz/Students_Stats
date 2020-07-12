@@ -1,14 +1,13 @@
-package com.simonjoz.contoller;
+package com.simonjoz.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class Course {
 
     @GetMapping("course")
-    public String getCourse(Model model) {
+    public String getCourse() {
         return "course";
     }
 }

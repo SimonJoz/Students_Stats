@@ -1,38 +1,37 @@
 package com.simonjoz.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@Entity
+@Table
 public class Person {
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String firstName;
     private String lastName;
-    private Integer age;
-
-
-    public Person(String firstName, String lastName, Integer age) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-    }
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
+    private String github;
+    private String start;
+    private Integer java;
+    private Integer checkbox;
+    private Integer designPatterns;
+    private Integer tdd;
+    private Integer dataBase;
+    private Integer hibernateJPA;
+    private Integer htmlCss;
+    private Integer jsp;
+    private Integer thymeleaf;
+    private Integer git;
+    @ToString.Exclude
+    @OneToMany (mappedBy = "owner", fetch = FetchType.LAZY)
+    private List<Task> tasks;
 }

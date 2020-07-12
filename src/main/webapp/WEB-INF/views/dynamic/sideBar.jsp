@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
@@ -15,29 +16,33 @@
     <li class="nav-item active">
         <a class="nav-link" href="<c:url value="/"/>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Home</span></a>
+            <span>Home</span>
+        </a>
     </li>
 
     <!-- Nav Item - Kursanci -->
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/personList"/>">
             <i class="fas fa-users"></i>
-            <span>Kursanci</span></a>
+            <span>Kursanci</span>
+        </a>
     </li>
 
     <!-- Nav Item - Kurs -->
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/course"/>">
             <i class="fas fa-laptop"></i>
-            <span>Kurs</span></a>
+            <span>Kurs</span>
+        </a>
     </li>
 
 
     <!-- Nav Item - Tasks -->
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/tasks"/>">
+        <a class="nav-link" href="<c:url value="/tasksList"/>">
             <i class="fas fa-clipboard-list"></i>
-            <span>Taski</span></a>
+            <span>Taski</span>
+        </a>
     </li>
 
 
@@ -45,24 +50,23 @@
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/technology"/>">
             <i class="fas fa-cogs"></i>
-            <span>Technologie</span></a>
+            <span>Technologie</span>
+        </a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
-        Inne
-    </div>
+    <div class="sidebar-heading">Inne</div>
 
 
     <!-- Nav Item - Blank -->
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-angle-double-left"></i>
-            <span>Ocena</span></a>
-
+            <span>Ocena</span>
+        </a>
     </li>
 
     <!-- Divider -->
