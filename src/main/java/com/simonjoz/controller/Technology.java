@@ -9,6 +9,6 @@ public class Technology {
 
     @GetMapping("technology")
     public String getTechnologies() {
-        return "technology";
+        return "technologies";
     }
 }

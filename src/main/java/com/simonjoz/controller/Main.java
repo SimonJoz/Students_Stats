@@ -18,8 +18,7 @@ public class Main {
 
     @GetMapping(value = {"/", "index"})
     public String countStudents(Model model) {
-        long studentsCount = personRepo.count();
-        model.addAttribute("iloscKursantow", studentsCount);
+        model.addAttribute("studentsCount", personRepo.count());
         return "index";
 
     }

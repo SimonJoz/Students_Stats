@@ -31,7 +31,9 @@
                                 <div class="card-header py-3">
                                     <!-- NAME -->
                                     <div class="form-group row">
-                                        <label for="firstName" class="col-2 col-form-label">Imię</label>
+                                        <label for="firstName" class="col-2 col-form-label">
+                                            <spring:message code="l.name"/>
+                                        </label>
                                         <div class="col-10">
                                             <input class="form-control" name="firstName" id="firstName"
                                                    value="${person.firstName}" type="text">
@@ -39,7 +41,9 @@
                                     </div>
                                     <!-- SURNAME -->
                                     <div class="form-group row">
-                                        <label for="lastName" class="col-2 col-form-label">Nazwisko</label>
+                                        <label for="lastName" class="col-2 col-form-label">
+                                            <spring:message code="l.surname"/>
+                                        </label>
                                         <div class="col-10">
                                             <input class="form-control" name="lastName" id="lastName"
                                                    value="${person.lastName}" type="text">
@@ -48,7 +52,9 @@
 
                                     <!-- GIT URL -->
                                     <div class="form-group row">
-                                        <label for="github" class="col-2 col-form-label">URL Git</label>
+                                        <label for="github" class="col-2 col-form-label">
+                                            <spring:message code="l.gitURL"/>
+                                        </label>
                                         <div class="col-10">
                                             <input class="form-control" name="github" id="github" type="text"
                                                    value="${person.github}">
@@ -57,8 +63,9 @@
 
                                     <!-- START DESC -->
                                     <div class="form-group row">
-                                        <label for="start" class="col-2 col-form-label">Od czego się
-                                            zaczęło:</label>
+                                        <label for="start" class="col-2 col-form-label">
+                                            <spring:message code="l.start"/>
+                                        </label>
                                         <div class="col-10">
                                             <textarea class="form-control" name="start" id="start"
                                                       rows="5">${person.start}</textarea>
@@ -66,13 +73,15 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">Czy opanowałeś jakieś technologie
-                                            ?</label>
+                                        <label class="col-2 col-form-label">
+                                            <spring:message code="l.tech.skills"/>
+                                        </label>
                                         <div class="col-1">
                                             <label class="radio-inline">
                                                 <input class="form-check-input" type="radio" value="1" name="checkbox"
                                                        data-toggle="collapse" data-target=".statModal:not(.show)" aria-expanded="true"
-                                                       <c:if test="${person.checkbox eq 1}">checked</c:if>>&nbsp;TAK
+                                                       <c:if test="${person.checkbox eq 1}">checked</c:if>>
+                                                &nbsp;<spring:message code="l.yes"/>
                                             </label>
                                         </div>
                                         <div class="col-1">
@@ -80,7 +89,8 @@
                                                 <input class="form-check-input" type="radio" value="0" name="checkbox"
                                                        data-toggle="collapse" data-target=".statModal.show" aria-expanded="false"
                                                        <c:if test="${person.checkbox eq 0 ||
-                                                            person.checkbox eq null}">checked</c:if>>&nbsp;NIE
+                                                            person.checkbox eq null}">checked</c:if>>
+                                                &nbsp;<spring:message code="l.no"/>
                                             </label>
                                         </div>
                                     </div>
@@ -106,10 +116,11 @@
                         <!-- End of Statistics -->
 
                     </div>
-                    <input class="btn btn-success pull-left" type="submit" value="Zapisz zmiany" id="searchButton"/>
+                    <input class="btn btn-success pull-left" type="submit"
+                           value="<spring:message code="b.save.changes"/>" id="searchButton"/>
                     <!-- Button to Open the Modal -->
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-                        Usuń
+                        <spring:message code="b.delete"/>
                     </button>
                 </form>
 
@@ -123,19 +134,20 @@
 
                         <!-- Modal Header -->
                         <div class="modal-header">
-                            <h4 class="modal-title">Czy na pewno chcesz usunąć osobę ?</h4>
+                            <h4 class="modal-title"><spring:message code="confirm.delete.person"/></h4>
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>
 
                         <!-- Modal body -->
                         <div class="modal-body">
-                            Jeżeli usuniesz to już nie będzie odwrotu
+                            <spring:message code="delete.warning"/>
                         </div>
 
                         <!-- Modal footer -->
                         <form name="send" method="post" action="<c:url value="/deletePerson/${person.id}"/>">
                             <div class="modal-footer">
-                                <input type="submit" name="delete" class="btn btn-danger pull-left" value="Tak"/>
+                                <input type="submit" class="btn btn-danger pull-left"
+                                       value="<spring:message code="b.delete"/>"/>
                             </div>
                         </form>
                     </div>

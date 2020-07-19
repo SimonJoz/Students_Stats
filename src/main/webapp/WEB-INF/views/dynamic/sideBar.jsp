@@ -6,7 +6,9 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Kursanci<sup> SDA</sup></div>
+        <div class="sidebar-brand-text mx-3">
+            <spring:message code="main.title"/><sup> SDA</sup>
+        </div>
     </a>
 
     <!-- Divider -->
@@ -16,7 +18,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="<c:url value="/"/>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Home</span>
+            <span><spring:message code="home"/></span>
         </a>
     </li>
 
@@ -24,7 +26,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/personList"/>">
             <i class="fas fa-users"></i>
-            <span>Kursanci</span>
+            <span><spring:message code="students.list"/></span>
         </a>
     </li>
 
@@ -32,7 +34,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/course"/>">
             <i class="fas fa-laptop"></i>
-            <span>Kurs</span>
+            <span><spring:message code="courses.list"/></span>
         </a>
     </li>
 
@@ -41,7 +43,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/tasksList"/>">
             <i class="fas fa-clipboard-list"></i>
-            <span>Taski</span>
+            <span><spring:message code="tasks.list"/></span>
         </a>
     </li>
 
@@ -50,7 +52,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<c:url value="/technology"/>">
             <i class="fas fa-cogs"></i>
-            <span>Technologie</span>
+            <span><spring:message code="technologies"/></span>
         </a>
     </li>
 
@@ -58,14 +60,14 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">Inne</div>
+    <div class="sidebar-heading"><spring:message code="others"/></div>
 
 
     <!-- Nav Item - Blank -->
     <li class="nav-item">
         <a class="nav-link" href="#">
             <i class="fas fa-angle-double-left"></i>
-            <span>Ocena</span>
+            <span><spring:message code="score"/></span>
         </a>
     </li>
 

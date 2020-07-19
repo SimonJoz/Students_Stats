@@ -6,10 +6,10 @@ import com.simonjoz.repository.PersonRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PersonList {
@@ -22,8 +22,7 @@ public class PersonList {
 
     @GetMapping("/personList")
     public String personList(Model model) {
-        List<Person> list = personRepo.findAll();
-        model.addAttribute("persons",list);
+        model.addAttribute("persons",personRepo.findAll());
         return "/personList";
     }
 
@@ -33,27 +32,26 @@ public class PersonList {
     }
 
     @PostMapping("/addNewPerson")
-    public RedirectView addNewPerson(@ModelAttribute Person newPerson) {
+    public String addNewPerson(@ModelAttribute Person newPerson) {
         personRepo.save(newPerson);
-        return new RedirectView("/personList");
+        return "redirect:/personList";
     }
 
     @GetMapping("/updatePerson/{id}")
     public String getPersonForEdit(Model model, @PathVariable("id") Long id) {
-        Person person = personRepo.getOne(id);
-        model.addAttribute("person", person);
+        model.addAttribute("person",  personRepo.getOne(id));
         return "/editPerson";
     }
 
     @PostMapping("/updatePerson/{id}")
-    public RedirectView updatePerson(@ModelAttribute Person updatedPerson) {
+    public String updatePerson(@ModelAttribute Person updatedPerson) {
         personRepo.save(updatedPerson);
-        return new RedirectView("/personList");
+        return "redirect:/personList";
     }
 
     @PostMapping("/deletePerson/{id}")
-    public RedirectView deletePerson(@PathVariable("id") Long id) {
+    public String deletePerson(@PathVariable("id") Long id) {
         personRepo.deleteById(id);
-        return new RedirectView("/personList");
+        return "redirect:/personList";
     }
 }

@@ -28,9 +28,8 @@ public class TaskController {
     }
 
     @GetMapping("addTask")
-    public String listPeoples(Model model) {
-        List<Person> list = personRepo.findAll();
-        model.addAttribute("peoples", list);
+    public String listPeoples(Model model, @ModelAttribute("newTask") Task task) {
+        model.addAttribute("peoples", personRepo.findAll());
         return "/addTask";
     }
 
@@ -43,17 +42,14 @@ public class TaskController {
 
     @GetMapping("tasksList")
     public String getTasksList(Model model) {
-        List<Task> list = taskRepo.findAll();
-        model.addAttribute("tasks", list);
-        List<Person> peoples = personRepo.findAll();
-        model.addAttribute("peoples", peoples);
+        model.addAttribute("tasks", taskRepo.findAll());
+        model.addAttribute("peoples", personRepo.findAll());
         return "/tasksList";
     }
 
     @GetMapping("updateTask/{id}")
     public String getTaskForUpdate(Model model, @PathVariable("id") Long id) {
-        Task taskForEdit = taskRepo.getOne(id);
-        model.addAttribute("task", taskForEdit);
+        model.addAttribute("task", taskRepo.getOne(id));
         return "/tasksList";
     }
 

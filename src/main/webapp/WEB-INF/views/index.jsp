@@ -35,9 +35,9 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                                            Ilość (kursanci)
+                                            <spring:message code="l.students.count"/>
                                         </div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${iloscKursantow}</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">${studentsCount}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-users fa-2x text-gray-300"></i>
@@ -54,7 +54,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                            Ilość h(kursu)
+                                            <spring:message code="l.hours"/>
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">360</div>
                                     </div>
@@ -72,7 +72,9 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                            <spring:message code="l.task.progress"/>
+                                        </div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
                                                 <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">80%</div>
@@ -101,7 +103,7 @@
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                            Technologie
+                                            <spring:message code="l.technologies"/>
                                         </div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
                                     </div>
@@ -120,9 +122,9 @@
 
             <!-- Content body-->
             <div class="jumbotron">
-                <h1>Projekt zajęciowy</h1>
+                <h1><spring:message code="l.project"/></h1>
                 <p>Bootstrap + JSP + Spring Boot + MySQL</p>
-                <p>Dzisiaj jest: <fmt:formatDate type = "date" value = "${now}" />.</p>
+                <p><spring:message code="l.today"/><fmt:formatDate type = "date" value = "${now}" />.</p>
             </div>
             <!-- End of content body-->
 

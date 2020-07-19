@@ -14,8 +14,9 @@
 
                 <!-- DESIGN PATTERNS -->
                 <div class="col-2">
-                    <label for="designPatterns" class="col-form-label">Wzorce
-                        projektowe</label>
+                    <label for="designPatterns" class="col-form-label">
+                        <spring:message code="l.design.patterns"/>
+                    </label>
                     <input class="form-control" type="text"
                            value="${person.designPatterns}"
                            id="designPatterns" name="designPatterns">
@@ -30,8 +31,9 @@
 
                 <!-- DATABASES SQL -->
                 <div class="col-2">
-                    <label for="dataBase" class="col-form-label">Bazy danych
-                        SQL</label>
+                    <label for="dataBase" class="col-form-label">
+                        <spring:message code="l.databases"/>
+                    </label>
                     <input class="form-control" type="text"
                            value="${person.dataBase}"
                            id="dataBase" name="dataBase">
@@ -48,7 +50,7 @@
 
                 <!-- HTML - CSS -->
                 <div class="col-2">
-                    <label for="htmlCss" class="col-form-label">HTML_CSS</label>
+                    <label for="htmlCss" class="col-form-label">HTML, CSS</label>
                     <input class="form-control" type="text"
                            value="${person.htmlCss}"
                            id="htmlCss" name="htmlCss">

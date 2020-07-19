@@ -37,38 +37,50 @@
                                 <div class="card-header py-3">
                                     <!-- Name -->
                                     <div class="form-group row">
-                                        <label for="firstName" class="col-2 col-form-label">Imię</label>
+                                        <label for="firstName" class="col-2 col-form-label">
+                                            <spring:message code="l.name" />
+                                        </label>
                                         <div class="col-10">
-                                            <form:input path="firstName" class="form-control" placeholder="Uzupełnij imię"/>
+                                            <spring:message code="p.name" var="msg"/>
+                                            <form:input path="firstName" class="form-control" placeholder="${msg}"/>
                                         </div>
                                     </div>
 
                                     <!-- Surname -->
                                     <div class="form-group row">
-                                        <label for="lastName" class="col-2 col-form-label">Nazwisko</label>
+                                        <label for="lastName" class="col-2 col-form-label">
+                                            <spring:message code="l.surname" />
+                                        </label>
                                         <div class="col-10">
-                                            <form:input class="form-control" path="lastName" placeholder="Uzupełnij nazwisko"/>
+                                            <spring:message code="p.surname" var="msg"/>
+                                            <form:input class="form-control" path="lastName" placeholder="${msg}"/>
                                         </div>
                                     </div>
 
                                     <!-- github URL -->
                                     <div class="form-group row">
-                                        <label for="github" class="col-2 col-form-label">URL Git</label>
+                                        <label for="github" class="col-2 col-form-label">
+                                            <spring:message code="l.gitURL"/>
+                                        </label>
                                         <div class="col-10">
-                                            <form:input class="form-control" path="github" placeholder="Uzupełnij url do gita"/>
+                                            <spring:message code="p.gitURL" var="msg"/>
+                                            <form:input class="form-control" path="github" placeholder="${msg}"/>
                                         </div>
                                     </div>
 
                                     <!-- Start description -->
                                     <div class="form-group row">
-                                        <label for="start" class="col-2 col-form-label">Od czego się zaczęło:</label>
+                                        <label for="start" class="col-2 col-form-label">
+                                            <spring:message code="l.start"/>
+                                        </label>
                                         <div class="col-10">
-                                            <form:textarea class="form-control" path="start" rows="5"
-                                                           placeholder="Napisz kilka słów co Cię zmotywowało aby zostać programistą..."/>
+                                            <spring:message code="p.start" var="msg"/>
+                                            <form:textarea class="form-control" path="start" rows="5" placeholder="${msg}"/>
                                         </div>
                                     </div>
 
                                 </div>
+
                             </div>
                             <!-- End of Person data -->
 
@@ -76,7 +88,8 @@
                     </div>
                     <!-- End of Content Row -->
 
-                    <input class="btn btn-success pull-left" type="submit" value="Wyślij" id="savePerson"/>
+                    <input class="btn btn-success pull-left" type="submit" value="<spring:message code="b.save"/>"
+                           id="savePerson"/>
 
                 </div>
                 <!-- /.container-fluid -->
