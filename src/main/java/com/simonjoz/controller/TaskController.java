@@ -34,7 +34,7 @@ public class TaskController {
     }
 
     @PostMapping("addTask")
-    public RedirectView addTask(@ModelAttribute Task newTask) {
+    public RedirectView addTask(@ModelAttribute("newTask") Task newTask) {
         newTask.setAddDate(LocalDate.now());
         taskRepo.save(newTask);
         return new RedirectView("tasksList");

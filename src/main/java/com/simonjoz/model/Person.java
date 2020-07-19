@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Getter
@@ -17,8 +18,8 @@ import java.util.List;
 public class Person {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String firstName;
-    private String lastName;
+    @NotEmpty private String firstName;
+    @NotEmpty private String lastName;
     private String github;
     private String start;
     private Integer java;

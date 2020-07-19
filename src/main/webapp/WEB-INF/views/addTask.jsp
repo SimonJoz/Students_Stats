@@ -58,12 +58,14 @@
                                         </label>
                                         <div class="col-10 input-group mb-3">
                                             <form:input class="form-control border-right-0" path="deadline"
-                                                        name="deadline" placeholder="dd/mm/rrrr"/>
+                                                        name="deadline" id="deadline" placeholder="dd/mm/rrrr"/>
                                             <div class="input-group-append">
                                             <span class="input-group-text bg-white border-left-0">
                                                 <i class="far fa-calendar-alt pt-1"></i>
                                             </span>
                                             </div>
+                                            <label for="deadline" class="col-2 col-form-label"></label>
+                                            <form:errors path="deadline" cssClass="ml-3 text-danger small"/>
                                         </div>
                                     </div>
 

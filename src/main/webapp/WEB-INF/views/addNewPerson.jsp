@@ -43,6 +43,7 @@
                                         <div class="col-10">
                                             <spring:message code="p.name" var="msg"/>
                                             <form:input path="firstName" class="form-control" placeholder="${msg}"/>
+                                            <form:errors path="firstName" class="ml-1 small text-danger"/>
                                         </div>
                                     </div>
 
@@ -54,6 +55,7 @@
                                         <div class="col-10">
                                             <spring:message code="p.surname" var="msg"/>
                                             <form:input class="form-control" path="lastName" placeholder="${msg}"/>
+                                            <form:errors path="lastName" class="ml-1 small text-danger"/>
                                         </div>
                                     </div>
 
