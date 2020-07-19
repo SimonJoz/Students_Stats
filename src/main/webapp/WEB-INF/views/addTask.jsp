@@ -36,7 +36,7 @@
 
                                     <!-- Student -->
                                     <div class="form-group row py-3">
-                                        <label for="owner" class="col-2 col-form-label">
+                                        <label for="owner" class="col-sm-2 col-form-label">
                                             <spring:message code="l.student"/>
                                         </label>
                                         <div class="col-10">
@@ -49,29 +49,29 @@
                                                 </c:forEach>
                                             </select>
                                         </div>
+                                        <form:errors path="owner.id" cssClass="col-10 offset-2 text-danger small"/>
                                     </div>
 
                                     <!-- Deadline Date -->
                                     <div class="form-group row">
-                                        <label for="deadline" class="col-2 col-form-label">
+                                        <label for="deadline" class="col-sm-2 col-form-label">
                                             <spring:message code="l.task.deadline"/>
                                         </label>
                                         <div class="col-10 input-group mb-3">
                                             <form:input class="form-control border-right-0" path="deadline"
-                                                        name="deadline" id="deadline" placeholder="dd/mm/rrrr"/>
+                                                        name="deadline" placeholder="dd/mm/yyyy"/>
                                             <div class="input-group-append">
                                             <span class="input-group-text bg-white border-left-0">
                                                 <i class="far fa-calendar-alt pt-1"></i>
                                             </span>
                                             </div>
-                                            <label for="deadline" class="col-2 col-form-label"></label>
-                                            <form:errors path="deadline" cssClass="ml-3 text-danger small"/>
                                         </div>
+                                        <form:errors path="deadline" cssClass="col-10 offset-2 text-danger small"/>
                                     </div>
 
                                     <!-- Task description -->
                                     <div class="form-group row">
-                                        <label for="description" class="col-2 col-form-label">
+                                        <label for="description" class="col-sm-2 col-form-label">
                                             <spring:message code="l.task.description"/>
                                         </label>
                                         <div class="col-10">
@@ -94,11 +94,11 @@
                                 <div class="card-header p-3">
                                     <div class="form-group row py-3">
 
-                                        <div class="col-10">
-                                            <div class="col-2">
+                                        <div class="col-sm">
+                                            <div class="col-sm-2">
                                                 <label><spring:message code="l.task.level"/></label>
                                             </div>
-                                            <div class="form-check-inline col-2 pt-3 pl-xl-5">
+                                            <div class="form-check-inline col-sm-2 pt-3 pl-xl-5">
                                                 <label class="form-check-label">
                                                     <form:radiobutton path="level" class="form-check-input"
                                                                       value="JUNIOR" checked="checked"/>
@@ -106,15 +106,15 @@
                                                     <span class="ml-2">JUNIOR</span>
                                                 </label>
                                             </div>
-                                            <div class="form-check-inline col-2 pt-3">
+                                            <div class="form-check-inline col-sm-2 pt-3">
                                                 <label class="form-check-label">
                                                     <form:radiobutton path="level" class="form-check-input"
                                                                       value="JUNIOR_PLUS"/>
                                                     <i class="btn btn-info btn-circle">J+</i>
-                                                    <span class="ml-2">JUNIOR PLUS</span>
+                                                    <span class="ml-2 d-inline-block">JUNIOR PLUS</span>
                                                 </label>
                                             </div>
-                                            <div class="form-check-inline col-2 pt-3">
+                                            <div class="form-check-inline col-sm-2 pt-3 mr-0">
                                                 <label class="form-check-label">
                                                     <form:radiobutton path="level" class="form-check-input"
                                                                       value="MID"/>
@@ -122,15 +122,15 @@
                                                     <span class="ml-2">MID</span>
                                                 </label>
                                             </div>
-                                            <div class="form-check-inline col-2 pt-3">
+                                            <div class="form-check-inline col-sm-2  pt-3">
                                                 <label class="form-check-label">
                                                     <form:radiobutton path="level" class="form-check-input"
                                                                       value="MID_PLUS"/>
                                                     <i class="btn btn-primary btn-circle">M+</i>
-                                                    <span class="ml-2">MID PLUS</span>
+                                                    <span class="ml-2 d-inline-block">MID PLUS</span>
                                                 </label>
                                             </div>
-                                            <div class="form-check-inline col-2 pt-3">
+                                            <div class="form-check-inline col-sm-2 pt-3">
                                                 <label class="form-check-label">
                                                     <form:radiobutton path="level" class="form-check-input"
                                                                       value="SENIOR"/>
@@ -148,7 +148,8 @@
                     <!--End of Level Data Row -->
 
                     <!-- Add Buttons -->
-                    <input class="btn btn-success pull-left" type="submit" value="<spring:message code="b.add.task"/>" id="addButton"/>
+                    <input class="btn btn-success pull-left" type="submit" value="<spring:message code="b.add.task"/>"
+                           id="addButton"/>
                 </form:form>
                 <!-- End of Form -->
             </div>

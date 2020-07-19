@@ -7,14 +7,14 @@ import com.simonjoz.repository.TaskRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.view.RedirectView;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
-import java.util.List;
 
 @Controller
 public class TaskController {
@@ -34,10 +34,13 @@ public class TaskController {
     }
 
     @PostMapping("addTask")
-    public RedirectView addTask(@ModelAttribute("newTask") Task newTask) {
+    public String addTask(@Valid @ModelAttribute("newTask") Task newTask, BindingResult result) {
+        if (result.hasErrors()) {
+            return "/addTask";
+        }
         newTask.setAddDate(LocalDate.now());
         taskRepo.save(newTask);
-        return new RedirectView("tasksList");
+        return  "redirect:tasksList";
     }
 
     @GetMapping("tasksList")

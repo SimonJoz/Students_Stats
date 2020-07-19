@@ -6,76 +6,68 @@
             <div class="row">
 
                 <!-- JAVA -->
-                <div class="col-2">
+                <div class="col-sm-2">
                     <label for="java" class="col-form-label">Java</label>
-                    <input class="form-control" type="text" value="${person.java}"
-                           id="java" name="java">
+                    <form:input path="java"  class="form-control" />
+                    <form:errors path="java" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- DESIGN PATTERNS -->
-                <div class="col-2">
+                <div class="col-sm-2">
                     <label for="designPatterns" class="col-form-label">
                         <spring:message code="l.design.patterns"/>
                     </label>
-                    <input class="form-control" type="text"
-                           value="${person.designPatterns}"
-                           id="designPatterns" name="designPatterns">
+                    <form:input path="designPatterns"  class="form-control" />
+                    <form:errors path="designPatterns" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- TDD -->
-                <div class="col-2">
+                <div class="col-sm-2">
                     <label for="tdd" class="col-form-label">TDD</label>
-                    <input class="form-control" type="text" value="${person.tdd}"
-                           id="tdd" name="tdd">
+                    <form:input path="tdd" class="form-control" />
+                    <form:errors path="tdd" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- DATABASES SQL -->
-                <div class="col-2">
-                    <label for="dataBase" class="col-form-label">
-                        <spring:message code="l.databases"/>
-                    </label>
-                    <input class="form-control" type="text"
-                           value="${person.dataBase}"
-                           id="dataBase" name="dataBase">
+                <div class="col-sm-2">
+                    <label for="dataBase" class="col-form-label"><spring:message code="l.databases"/></label>
+                    <form:input path="dataBase" class="form-control" />
+                    <form:errors path="dataBase" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- HIBERNATE JPA -->
-                <div class="col-2">
-                    <label for="hibernateJPA" class="col-form-label">Hibernate
-                        JPA</label>
-                    <input class="form-control" type="text"
-                           value="${person.hibernateJPA}"
-                           id="hibernateJPA" name="hibernateJPA">
+                <div class="col-sm-2">
+                    <label for="hibernateJPA" class="col-form-label">Hibernate JPA</label>
+                    <form:input path="hibernateJPA" class="form-control" />
+                    <form:errors path="hibernateJPA" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- HTML - CSS -->
-                <div class="col-2">
+                <div class="col-sm-2">
                     <label for="htmlCss" class="col-form-label">HTML, CSS</label>
-                    <input class="form-control" type="text"
-                           value="${person.htmlCss}"
-                           id="htmlCss" name="htmlCss">
+                    <form:input path="htmlCss" class="form-control" />
+                    <form:errors path="htmlCss" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- JSP -->
-                <div class="col-2">
-                    <label for="jsp" class="col-form-label">JSP</label>
-                    <input class="form-control" type="text"
-                           value="${person.hibernateJPA}" id="jsp" name="jsp">
+                <div class="col-sm-2">
+                    <label for="hibernateJPA" class="col-form-label">JSP</label>
+                    <form:input path="jsp" class="form-control" />
+                    <form:errors path="jsp" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- THYMELEAF -->
-                <div class="col-2">
+                <div class="col-sm-2">
                     <label for="thymeleaf" class="col-form-label">Thymeleaf</label>
-                    <input class="form-control" type="text"
-                           value="${person.thymeleaf}"
-                           id="thymeleaf" name="thymeleaf">
+                    <form:input path="thymeleaf" class="form-control" />
+                    <form:errors path="thymeleaf" cssClass="ml-1 text-danger small"/>
                 </div>
 
                 <!-- GIT -->
-                <div class="col-2">
+                <div class="col-sm-2">
                     <label for="git" class="col-form-label">GIT</label>
-                    <input class="form-control" type="text" value="${person.git}"
-                           id="git" name="git">
+                    <form:input path="git" class="form-control" />
+                    <form:errors path="git" cssClass="ml-1 text-danger small"/>
                 </div>
             </div>
 

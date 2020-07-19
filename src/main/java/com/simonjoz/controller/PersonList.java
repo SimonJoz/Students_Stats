@@ -37,7 +37,7 @@ public class PersonList {
     @PostMapping("/addNewPerson")
     public String addNewPerson(@Valid @ModelAttribute("newPerson") Person newPerson, BindingResult result) {
         if (result.hasErrors()) {
-            return "/addNewPerson";
+            return "addNewPerson";
         }
         personRepo.save(newPerson);
         return "redirect:/personList";
@@ -50,7 +50,10 @@ public class PersonList {
     }
 
     @PostMapping("/updatePerson/{id}")
-    public String updatePerson(@ModelAttribute Person updatedPerson) {
+    public String updatePerson(@Valid @ModelAttribute("person") Person updatedPerson, BindingResult result) {
+        if (result.hasErrors()) {
+            return "/editPerson";
+        }
         personRepo.save(updatedPerson);
         return "redirect:/personList";
     }

@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@include file="dynamic/css.jsp" %>
 
@@ -23,7 +24,7 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form name="send" method="post" action="<c:url value="/updatePerson/${person.id}"/>">
+                <form:form modelAttribute="person">
                     <!-- Content Row -->
                     <div class="row">
                         <div class="col-xl-12 col-md-12 mb-12">
@@ -35,8 +36,8 @@
                                             <spring:message code="l.name"/>
                                         </label>
                                         <div class="col-10">
-                                            <input class="form-control" name="firstName" id="firstName"
-                                                   value="${person.firstName}" type="text">
+                                            <form:input path="firstName"  class="form-control" />
+                                            <form:errors path="firstName" cssClass="ml-1 text-danger small"/>
                                         </div>
                                     </div>
                                     <!-- SURNAME -->
@@ -45,8 +46,8 @@
                                             <spring:message code="l.surname"/>
                                         </label>
                                         <div class="col-10">
-                                            <input class="form-control" name="lastName" id="lastName"
-                                                   value="${person.lastName}" type="text">
+                                            <form:input path="lastName"  class="form-control" />
+                                            <form:errors path="lastName" cssClass="ml-1 text-danger small"/>
                                         </div>
                                     </div>
 
@@ -122,7 +123,7 @@
                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
                         <spring:message code="b.delete"/>
                     </button>
-                </form>
+                </form:form>
 
             </div>
             <!-- /.container-fluid -->

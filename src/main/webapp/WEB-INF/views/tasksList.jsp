@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@include file="dynamic/css.jsp" %>
 <body id="page-top">
@@ -26,7 +27,7 @@
 
                 <!-- Add task header -->
                 <div class="card-body pt-1 pb-1">
-                    <a href="<c:url value="/addTask"/>" class="btn btn-warning col-12" role="button">
+                    <a href="<c:url value="/addTask"/>" class="btn btn-warning btn-block" role="button">
                         <i class="fas fa-exclamation-triangle text-white pb-1 pt-1">&nbsp;<spring:message
                                 code="b.add.task"/></i>
                     </a>
@@ -36,7 +37,6 @@
                 <!-- Body -->
                 <div class="card-body">
                     <div class="row">
-
                         <!-- Legend column -->
                         <div class="col-2 mr-auto text-white">
                             <div class="card pl-4 mb-1 bg-success pt-3">
@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                             <div class="card pl-4 mb-1  bg-danger pt-3">
-                                <div class="card-body ">
+                                <div class="card-body">
                                     <h5><spring:message code="senior"/></h5>
                                     <p><spring:message code="l.level"/> Senior</p>
                                 </div>
@@ -78,7 +78,7 @@
                                     <li class="card card-body h-50 border border-left-${task.level.color} mb-3 pt-3">
                                         <!-- Tasks Content -->
                                         <div class="row">
-                                            <div class="col-10">
+                                            <div class="col-sm-7">
                                                 <p class="text-primary">${task.owner.firstName} ${task.owner.lastName} |
                                                     <b><spring:message code="l.added.upper"/></b>: ${task.addDate} |
                                                     <b><spring:message code="l.deadline.upper"/></b>: ${task.deadline}
@@ -86,12 +86,14 @@
                                                 <p class="text-dark text-xl">${task.description}</p>
                                             </div>
 
-                                            <div class="col-2 text-right mt-5 px-4">
-                                                <a href="#" role="button" class="btn btn-success mr-2"
+                                            <div class="col-sm-4 offset-1 text-right mt-auto">
+                                                <a href="#" role="button" class="btn btn-success px-1"
+                                                   style="min-width: 80px"
                                                    data-toggle="modal"
                                                    data-target="#editModal${task.id}"><spring:message code="b.edit"/>
                                                 </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                                <button type="button" class="btn btn-danger px-1"
+                                                        style="min-width: 80px" data-toggle="modal"
                                                         data-target="#deleteModal${task.id}">
                                                     <spring:message code="b.delete"/>
                                                 </button>
@@ -141,8 +143,8 @@
                                                                     </c:forEach>
                                                                 </select>
                                                             </div>
-                                                            <!-- Deadline Date  -->
 
+                                                            <!-- Deadline Date  -->
                                                             <label for="deadline" class="col-form-label">
                                                                 <spring:message code="l.task.deadline"/>
                                                             </label>
@@ -154,7 +156,7 @@
                                                                        value="<fmt:formatDate value="${parsedDate}"
                                                                                         type="date" pattern="dd/MM/yyyy"/>"
                                                                        name="deadline" id="deadline"
-                                                                       placeholder="dd/mm/rrrr"/>
+                                                                       placeholder="dd/mm/yyyy"/>
                                                                 <div class="input-group-append">
                                                                 <span class="input-group-text bg-white">
                                                                      <i class="far fa-calendar-alt pt-1"></i>
@@ -233,10 +235,12 @@
                                                         <!-- Modal footer -->
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
-                                                                    data-dismiss="modal"> <spring:message code="b.abort"/>
+                                                                    data-dismiss="modal"><spring:message
+                                                                    code="b.abort"/>
                                                             </button>
                                                             <input class="btn btn-success" type="submit"
-                                                                   value="<spring:message code="b.save.changes"/>" id="submitChanges"/>
+                                                                   value="<spring:message code="b.save.changes"/>"
+                                                                   id="submitChanges"/>
                                                         </div>
                                                         <!-- End of Modal footer -->
 
