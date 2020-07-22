@@ -32,20 +32,20 @@
                                 <div class="card-header py-3">
                                     <!-- NAME -->
                                     <div class="form-group row">
-                                        <label for="firstName" class="col-2 col-form-label">
+                                        <label for="firstName" class="col-lg-2 col-form-label">
                                             <spring:message code="l.name"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <form:input path="firstName"  class="form-control" />
                                             <form:errors path="firstName" cssClass="ml-1 text-danger small"/>
                                         </div>
                                     </div>
                                     <!-- SURNAME -->
                                     <div class="form-group row">
-                                        <label for="lastName" class="col-2 col-form-label">
+                                        <label for="lastName" class="col-lg-2 col-form-label">
                                             <spring:message code="l.surname"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <form:input path="lastName"  class="form-control" />
                                             <form:errors path="lastName" cssClass="ml-1 text-danger small"/>
                                         </div>
@@ -53,10 +53,10 @@
 
                                     <!-- GIT URL -->
                                     <div class="form-group row">
-                                        <label for="github" class="col-2 col-form-label">
+                                        <label for="github" class="col-lg-2 col-form-label">
                                             <spring:message code="l.gitURL"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <input class="form-control" name="github" id="github" type="text"
                                                    value="${person.github}">
                                         </div>
@@ -64,20 +64,20 @@
 
                                     <!-- START DESC -->
                                     <div class="form-group row">
-                                        <label for="start" class="col-2 col-form-label">
+                                        <label for="start" class="col-lg-2 col-form-label">
                                             <spring:message code="l.start"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <textarea class="form-control" name="start" id="start"
                                                       rows="5">${person.start}</textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group row">
-                                        <label class="col-2 col-form-label">
+                                        <label class="col-lg-2 col-form-label">
                                             <spring:message code="l.tech.skills"/>
                                         </label>
-                                        <div class="col-1">
+                                        <div class="col-lg-1 col-md-2 col-sm-2 mt-3 ml-4">
                                             <label class="radio-inline">
                                                 <input class="form-check-input" type="radio" value="1" name="checkbox"
                                                        data-toggle="collapse" data-target=".statModal:not(.show)" aria-expanded="true"
@@ -85,7 +85,7 @@
                                                 &nbsp;<spring:message code="l.yes"/>
                                             </label>
                                         </div>
-                                        <div class="col-1">
+                                        <div class="col-lg-1 col-md-2 col-sm-2 ml-4 mt-3">
                                             <label class="radio-inline">
                                                 <input class="form-check-input" type="radio" value="0" name="checkbox"
                                                        data-toggle="collapse" data-target=".statModal.show" aria-expanded="false"

@@ -25,75 +25,95 @@
             <div class="container-fluid">
                 <!-- Content Row -->
 
-                <!-- Add task header -->
-                <div class="card-body pt-1 pb-1">
+                <!-- Add task button -->
+                <div class="card-body pt-1 pb-1 ">
                     <a href="<c:url value="/addTask"/>" class="btn btn-warning btn-block" role="button">
                         <i class="fas fa-exclamation-triangle text-white pb-1 pt-1">&nbsp;<spring:message
                                 code="b.add.task"/></i>
                     </a>
                 </div>
-                <!-- End of Add task header -->
+                <!-- End of Add task button -->
 
                 <!-- Body -->
                 <div class="card-body">
+
+                    <%-- Upper Legend --%>
+                    <div class="row mb-3 text-white d-md-block d-lg-none">
+                        <div class="row card-body justify-content-center text-center ">
+                            <div class="col-xs-2 card card-body bg-success d-inline-block">Junior</div>
+                            <div class="col-xs-2 card card-body bg-info d-inline-block">Junior +</div>
+                            <div class="col-xs-2 card card-body bg-dark d-inline-block">Mid</div>
+                            <div class="col-xs-2 card card-body bg-primary d-inline-block">Mid +</div>
+                            <div class="col-xs-2 card card-body bg-danger d-inline-block">Senior</div>
+                        </div>
+                    </div>
+                    <%-- End of Upper Legend --%>
+
+                    <!-- Legend column -->
                     <div class="row">
-                        <!-- Legend column -->
-                        <div class="col-2 mr-auto text-white">
-                            <div class="card pl-4 mb-1 bg-success pt-3">
+                        <div class="col-lg-3 mr-auto text-white d-none d-lg-block">
+                            <div class="card align-items-center bg-success pt-3">
                                 <div class="card-body">
-                                    <h5><spring:message code="junior"/></h5>
+                                    <p class="h5"><spring:message code="junior"/></p class="h5">
                                     <p><spring:message code="l.level"/> Junior</p>
                                 </div>
                             </div>
-                            <div class="card pl-4 mb-1 bg-info pt-3">
+                            <div class="card align-items-center bg-info pt-3">
                                 <div class="card-body">
-                                    <h5><spring:message code="junior.plus"/></h5>
-                                    <p><spring:message code="l.level"/> Junior +</p>
+                                    <p class="h5"><spring:message code="junior.plus"/></p>
+                                    <p><spring:message code="l.level"/>Junior +</p>
                                 </div>
                             </div>
-                            <div class="card pl-4 mb-1 bg-dark pt-3">
+                            <div class="card align-items-center bg-dark pt-3">
                                 <div class="card-body">
-                                    <h5><spring:message code="mid"/></h5>
+                                    <p class="h5"><spring:message code="mid"/></p>
                                     <p><spring:message code="l.level"/> Mid</p>
                                 </div>
                             </div>
-                            <div class="card pl-4 mb-1 bg-primary pt-3">
+                            <div class="card align-items-center bg-primary pt-3">
                                 <div class="card-body">
-                                    <h5><spring:message code="mid.plus"/></h5>
+                                    <p class="h5"><spring:message code="mid.plus"/></p>
                                     <p><spring:message code="l.level"/> Mid +</p>
                                 </div>
                             </div>
-                            <div class="card pl-4 mb-1  bg-danger pt-3">
+                            <div class="card align-items-center bg-danger pt-3">
                                 <div class="card-body">
-                                    <h5><spring:message code="senior"/></h5>
+                                    <p class="h5"><spring:message code="senior"/></p>
                                     <p><spring:message code="l.level"/> Senior</p>
                                 </div>
                             </div>
                         </div>
                         <!-- End of Legend column -->
                         <!-- Tasks column -->
-                        <div class="col-10">
+                        <div class="col-lg-9">
                             <ul class="list-group">
                                 <c:forEach items="${tasks}" var="task">
                                     <li class="card card-body h-50 border border-left-${task.level.color} mb-3 pt-3">
                                         <!-- Tasks Content -->
                                         <div class="row">
-                                            <div class="col-sm-7">
-                                                <p class="text-primary">${task.owner.firstName} ${task.owner.lastName} |
-                                                    <b><spring:message code="l.added.upper"/></b>: ${task.addDate} |
-                                                    <b><spring:message code="l.deadline.upper"/></b>: ${task.deadline}
-                                                </p>
+                                            <div class="col-xl-9 col-lg-8">
+                                                <p class="text-primary">${task.owner.firstName}
+                                                        ${task.owner.lastName} |
+                                                    <span class="d-inline-block">
+                                                        <b><spring:message code="l.added.upper"/></b>:
+                                                            ${task.addDate} |
+                                                    </span>
+                                                    <span class="d-inline-block">
+                                                        <b><spring:message code="l.deadline.upper"/></b>:
+                                                            ${task.deadline}
+                                                    </span>
                                                 <p class="text-dark text-xl">${task.description}</p>
                                             </div>
 
-                                            <div class="col-sm-4 offset-1 text-right mt-auto">
+                                            <div class="col-xl-3 col-lg-4 justify-content-end text-right mt-auto">
                                                 <a href="#" role="button" class="btn btn-success px-1"
-                                                   style="min-width: 80px"
+                                                   style="min-width: 65px"
                                                    data-toggle="modal"
-                                                   data-target="#editModal${task.id}"><spring:message code="b.edit"/>
+                                                   data-target="#editModal${task.id}"><spring:message
+                                                        code="b.edit"/>
                                                 </a>
                                                 <button type="button" class="btn btn-danger px-1"
-                                                        style="min-width: 80px" data-toggle="modal"
+                                                        style="min-width: 65px" data-toggle="modal"
                                                         data-target="#deleteModal${task.id}">
                                                     <spring:message code="b.delete"/>
                                                 </button>
@@ -110,11 +130,16 @@
 
                                                         <!-- Modal header -->
                                                         <div class="modal-header">
-                                                            <p class="text-primary">${task.owner.firstName} ${task.owner.lastName}
-                                                                | <b><spring:message
-                                                                        code="l.added.upper"/></b>: ${task.addDate} |
-                                                                <b><spring:message
-                                                                        code="l.deadline.upper"/></b>: ${task.deadline}
+                                                            <p class="text-primary">${task.owner.firstName}
+                                                                    ${task.owner.lastName} |
+                                                                <span class="d-inline-block">
+                                                                    <b><spring:message code="l.added.upper"/></b>
+                                                                    : ${task.addDate} |
+                                                                </span>
+                                                                <span class="d-inline-block">
+                                                                    <b><spring:message code="l.deadline.upper"/></b>:
+                                                                        ${task.deadline}
+                                                                </span>
                                                             </p>
                                                             <button type="button" class="close" data-dismiss="modal">
                                                                 &times;
@@ -132,7 +157,8 @@
                                                                 <label for="owner" class="col-form-label">
                                                                     <spring:message code="l.student"/>
                                                                 </label>
-                                                                <select class="form-control" name="owner" id="owner">
+                                                                <select class="form-control" name="owner"
+                                                                        id="owner">
                                                                     <c:forEach items="${peoples}" var="owner">
                                                                         <option
                                                                                 <c:if test="${owner.id eq
@@ -152,7 +178,8 @@
                                                                 <input class="form-control border-right-0"
                                                                         <fmt:parseDate value="${task.deadline}"
                                                                                        pattern="yyyy-MM-dd"
-                                                                                       var="parsedDate" type="date"/>
+                                                                                       var="parsedDate"
+                                                                                       type="date"/>
                                                                        value="<fmt:formatDate value="${parsedDate}"
                                                                                         type="date" pattern="dd/MM/yyyy"/>"
                                                                        name="deadline" id="deadline"
@@ -175,60 +202,65 @@
                                                             </div>
 
                                                             <!-- Level -->
-                                                            <label>
-                                                                <spring:message code="l.task.level"/>
-                                                            </label>
-                                                            <div class="form-check-inline ml-2 pt-3 pl-5">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input"
-                                                                           name="level"
-                                                                           value="${task.level}"
-                                                                           <c:if test="${task.level eq 'JUNIOR' ||
+                                                            <div class="row">
+                                                                <div class="col-xs-12 col-lg-2">
+                                                                    <label class="pt-2">
+                                                                        <spring:message code="l.task.level"/>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="col-xs-12 col-lg-10">
+                                                                    <div class="form-check-inline ml-lg-3 ml-md-2 ml-sm-1 pt-lg-2">
+                                                                        <label class="form-check-label ml-3">
+                                                                            <input type="radio" class="form-check-input"
+                                                                                   name="level"
+                                                                                   value="${task.level}"
+                                                                                   <c:if test="${task.level eq 'JUNIOR' ||
                                                                             task.level eq null}">checked</c:if>>
-                                                                    <i class="btn btn-success btn-circle">J</i>
-                                                                </label>
-                                                            </div>
+                                                                            <i class="btn btn-success btn-circle">J</i>
+                                                                        </label>
+                                                                    </div>
 
-                                                            <div class="form-check-inline ml-2 pt-3">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input"
-                                                                           name="level"
-                                                                           value="${task.level}"
-                                                                           <c:if test="${task.level eq 'JUNIOR_PLUS'}">checked</c:if>>
-                                                                    <i class="btn btn-info btn-circle">J+</i>
-                                                                </label>
-                                                            </div>
+                                                                    <div class="form-check-inline ml-lg-3 ml-lg-3 ml-md-2 ml-sm-1 pt-lg-2">
+                                                                        <label class="form-check-label">
+                                                                            <input type="radio" class="form-check-input"
+                                                                                   name="level"
+                                                                                   value="${task.level}"
+                                                                                   <c:if test="${task.level eq 'JUNIOR_PLUS'}">checked</c:if>>
+                                                                            <i class="btn btn-info btn-circle">J+</i>
+                                                                        </label>
+                                                                    </div>
 
-                                                            <div class="form-check-inline ml-2 pt-3">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input"
-                                                                           name="level"
-                                                                           value="${task.level}"
-                                                                           <c:if test="${task.level eq 'MID'}">checked</c:if>>
-                                                                    <i class="btn btn-warning btn-circle">M</i>
-                                                                </label>
-                                                            </div>
+                                                                    <div class="form-check-inline ml-lg-3 ml-md-2 ml-sm-1 pt-lg-2">
+                                                                        <label class="form-check-label">
+                                                                            <input type="radio" class="form-check-input"
+                                                                                   name="level"
+                                                                                   value="${task.level}"
+                                                                                   <c:if test="${task.level eq 'MID'}">checked</c:if>>
+                                                                            <i class="btn btn-warning btn-circle">M</i>
+                                                                        </label>
+                                                                    </div>
 
-                                                            <div class="form-check-inline ml-2 pt-3">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input"
-                                                                           name="level"
-                                                                           value="${task.level}"
-                                                                           <c:if test="${task.level eq 'MID_PLUS'}">checked</c:if>>
-                                                                    <i class="btn btn-primary btn-circle">M+</i>
-                                                                </label>
-                                                            </div>
+                                                                    <div class="form-check-inline ml-lg-3 ml-md-2 ml-sm-1 pt-lg-2">
+                                                                        <label class="form-check-label">
+                                                                            <input type="radio" class="form-check-input"
+                                                                                   name="level"
+                                                                                   value="${task.level}"
+                                                                                   <c:if test="${task.level eq 'MID_PLUS'}">checked</c:if>>
+                                                                            <i class="btn btn-primary btn-circle">M+</i>
+                                                                        </label>
+                                                                    </div>
 
-                                                            <div class="form-check-inline ml-2 pt-3">
-                                                                <label class="form-check-label">
-                                                                    <input type="radio" class="form-check-input"
-                                                                           name="level"
-                                                                           value="${task.level}"
-                                                                           <c:if test="${task.level eq 'SENIOR'}">checked</c:if> >
-                                                                    <i class="btn btn-danger btn-circle">S</i>
-                                                                </label>
+                                                                    <div class="form-check-inline ml-lg-3 ml-md-2 ml-sm-1 pt-lg-2">
+                                                                        <label class="form-check-label">
+                                                                            <input type="radio" class="form-check-input"
+                                                                                   name="level"
+                                                                                   value="${task.level}"
+                                                                                   <c:if test="${task.level eq 'SENIOR'}">checked</c:if> >
+                                                                            <i class="btn btn-danger btn-circle">S</i>
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-
                                                         </div>
                                                         <!-- End of Modal body -->
 

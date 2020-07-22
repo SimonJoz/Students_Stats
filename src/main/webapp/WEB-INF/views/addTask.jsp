@@ -36,10 +36,10 @@
 
                                     <!-- Student -->
                                     <div class="form-group row py-3">
-                                        <label for="owner" class="col-sm-2 col-form-label">
+                                        <label for="owner" class="col-lg-2 col-form-label">
                                             <spring:message code="l.student"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <select class="custom-select" name="owner" id="owner">
                                                 <option><spring:message code="l.choose.person"/></option>
                                                 <c:forEach items="${peoples}" var="owner">
@@ -49,15 +49,16 @@
                                                 </c:forEach>
                                             </select>
                                         </div>
-                                        <form:errors path="owner.id" cssClass="col-10 offset-2 text-danger small"/>
+                                        <form:errors path="owner.id"
+                                                     cssClass="col-lg-10 offset-lg-2 offset-sm-0 text-danger small"/>
                                     </div>
 
                                     <!-- Deadline Date -->
                                     <div class="form-group row">
-                                        <label for="deadline" class="col-sm-2 col-form-label">
+                                        <label for="deadline" class="col-lg-2 col-form-label">
                                             <spring:message code="l.task.deadline"/>
                                         </label>
-                                        <div class="col-10 input-group mb-3">
+                                        <div class="col-lg-10 input-group mb-3">
                                             <form:input class="form-control border-right-0" path="deadline"
                                                         name="deadline" placeholder="dd/mm/yyyy"/>
                                             <div class="input-group-append">
@@ -66,15 +67,16 @@
                                             </span>
                                             </div>
                                         </div>
-                                        <form:errors path="deadline" cssClass="col-10 offset-2 text-danger small"/>
+                                        <form:errors path="deadline"
+                                                     cssClass="col-lg-10 offset-lg-2 offset-xs-0 text-danger small"/>
                                     </div>
 
                                     <!-- Task description -->
                                     <div class="form-group row">
-                                        <label for="description" class="col-sm-2 col-form-label">
+                                        <label for="description" class="col-lg-2 col-form-label">
                                             <spring:message code="l.task.description"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <form:textarea path="description" class="form-control" rows="5"/>
                                         </div>
                                     </div>
@@ -88,59 +90,33 @@
                     <!--End of Task data Row -->
 
                     <!-- Level Data Row -->
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12 mb-12">
-                            <div class="card shadow mb-4">
-                                <div class="card-header p-3">
-                                    <div class="form-group row py-3">
 
-                                        <div class="col-sm">
-                                            <div class="col-sm-2">
-                                                <label><spring:message code="l.task.level"/></label>
-                                            </div>
-                                            <div class="form-check-inline col-sm-2 pt-3 pl-xl-5">
-                                                <label class="form-check-label">
-                                                    <form:radiobutton path="level" class="form-check-input"
-                                                                      value="JUNIOR" checked="checked"/>
-                                                    <i class="btn btn-success btn-circle">J</i>
-                                                    <span class="ml-2">JUNIOR</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-inline col-sm-2 pt-3">
-                                                <label class="form-check-label">
-                                                    <form:radiobutton path="level" class="form-check-input"
-                                                                      value="JUNIOR_PLUS"/>
-                                                    <i class="btn btn-info btn-circle">J+</i>
-                                                    <span class="ml-2 d-inline-block">JUNIOR PLUS</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-inline col-sm-2 pt-3 mr-0">
-                                                <label class="form-check-label">
-                                                    <form:radiobutton path="level" class="form-check-input"
-                                                                      value="MID"/>
-                                                    <i class="btn btn-warning btn-circle">M</i>
-                                                    <span class="ml-2">MID</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-inline col-sm-2  pt-3">
-                                                <label class="form-check-label">
-                                                    <form:radiobutton path="level" class="form-check-input"
-                                                                      value="MID_PLUS"/>
-                                                    <i class="btn btn-primary btn-circle">M+</i>
-                                                    <span class="ml-2 d-inline-block">MID PLUS</span>
-                                                </label>
-                                            </div>
-                                            <div class="form-check-inline col-sm-2 pt-3">
-                                                <label class="form-check-label">
-                                                    <form:radiobutton path="level" class="form-check-input"
-                                                                      value="SENIOR"/>
-                                                    <i class="btn btn-danger btn-circle">S</i>
-                                                    <span class="ml-2">SENIOR</span>
-                                                </label>
-                                            </div>
-
-                                        </div>
-                                    </div>
+                    <div class="card shadow card-body mb-3">
+                        <div class="form group row py-3 pl-2">
+                            <div class="col-lg-2">
+                                <label class="mr-5"><spring:message code="l.task.level"/></label>
+                            </div>
+                            <div class="col-lg-10">
+                                <div class="form-check-inline mt-3">
+                                    <form:radiobutton path="level" class="form-check-input"
+                                                      value="JUNIOR" checked="checked"/>
+                                    <i class="btn btn-success btn-circle ml-2 mr-3">J</i> JUNIOR
+                                </div>
+                                <div class="form-check-inline mt-3">
+                                    <form:radiobutton path="level" class="form-check-input" value="JUNIOR_PLUS"/>
+                                    <i class="btn btn-info btn-circle ml-2 mr-3">J+</i> JUNIOR PLUS
+                                </div>
+                                <div class="form-check-inline mt-3">
+                                    <form:radiobutton path="level" class="form-check-input" value="MID"/>
+                                    <i class="btn btn-warning btn-circle ml-2 mr-3">M</i> MID
+                                </div>
+                                <div class="form-check-inline mt-3">
+                                    <form:radiobutton path="level" class="form-check-input" value="MID_PLUS"/>
+                                    <i class="btn btn-primary btn-circle ml-2 mr-3">M+</i> MID PLUS
+                                </div>
+                                <div class="form-check-inline mt-3">
+                                    <form:radiobutton path="level" class="form-check-input" value="SENIOR"/>
+                                    <i class="btn btn-danger btn-circle ml-2 mr-3">S</i> SENIOR
                                 </div>
                             </div>
                         </div>
@@ -148,8 +124,8 @@
                     <!--End of Level Data Row -->
 
                     <!-- Add Buttons -->
-                    <input class="btn btn-success pull-left" type="submit" value="<spring:message code="b.add.task"/>"
-                           id="addButton"/>
+                        <input class="btn btn-success" type="submit" value="<spring:message code="b.add.task"/>"
+                               id="addButton"/>
                 </form:form>
                 <!-- End of Form -->
             </div>

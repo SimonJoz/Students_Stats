@@ -37,10 +37,10 @@
                                 <div class="card-header py-3">
                                     <!-- Name -->
                                     <div class="form-group row">
-                                        <label for="firstName" class="col-2 col-form-label">
+                                        <label for="firstName" class="col-lg-2 col-form-label">
                                             <spring:message code="l.name" />
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <spring:message code="p.name" var="msg"/>
                                             <form:input path="firstName" class="form-control" placeholder="${msg}"/>
                                             <form:errors path="firstName" class="ml-1 small text-danger"/>
@@ -49,10 +49,10 @@
 
                                     <!-- Surname -->
                                     <div class="form-group row">
-                                        <label for="lastName" class="col-2 col-form-label">
+                                        <label for="lastName" class="col-lg-2 col-form-label">
                                             <spring:message code="l.surname" />
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <spring:message code="p.surname" var="msg"/>
                                             <form:input class="form-control" path="lastName" placeholder="${msg}"/>
                                             <form:errors path="lastName" class="ml-1 small text-danger"/>
@@ -61,10 +61,10 @@
 
                                     <!-- github URL -->
                                     <div class="form-group row">
-                                        <label for="github" class="col-2 col-form-label">
+                                        <label for="github" class="col-lg-2 col-form-label">
                                             <spring:message code="l.gitURL"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <spring:message code="p.gitURL" var="msg"/>
                                             <form:input class="form-control" path="github" placeholder="${msg}"/>
                                         </div>
@@ -72,10 +72,10 @@
 
                                     <!-- Start description -->
                                     <div class="form-group row">
-                                        <label for="start" class="col-2 col-form-label">
+                                        <label for="start" class="col-lg-2 col-form-label">
                                             <spring:message code="l.start"/>
                                         </label>
-                                        <div class="col-10">
+                                        <div class="col-lg-10">
                                             <spring:message code="p.start" var="msg"/>
                                             <form:textarea class="form-control" path="start" rows="5" placeholder="${msg}"/>
                                         </div>
