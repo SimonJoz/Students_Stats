@@ -19,4 +19,5 @@ public class Register {
         return "/loginPages/login";
     }
 
+
 }

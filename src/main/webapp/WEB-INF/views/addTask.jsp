@@ -90,12 +90,11 @@
                     <!--End of Task data Row -->
 
                     <!-- Level Data Row -->
-
                     <div class="card shadow card-body mb-3">
                         <div class="form group row py-3 pl-2">
-                            <div class="col-lg-2">
-                                <label class="mr-5"><spring:message code="l.task.level"/></label>
-                            </div>
+                            <label class="col-lg-2 col-md-12 col-form-label">
+                                <spring:message code="l.task.level"/>
+                            </label>
                             <div class="col-lg-10">
                                 <div class="form-check-inline mt-3">
                                     <form:radiobutton path="level" class="form-check-input"
@@ -124,8 +123,8 @@
                     <!--End of Level Data Row -->
 
                     <!-- Add Buttons -->
-                        <input class="btn btn-success" type="submit" value="<spring:message code="b.add.task"/>"
-                               id="addButton"/>
+                    <input class="btn btn-success" type="submit" value="<spring:message code="b.add.task"/>"
+                           id="addButton"/>
                 </form:form>
                 <!-- End of Form -->
             </div>
