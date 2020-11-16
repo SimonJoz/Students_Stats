@@ -40,17 +40,18 @@
                                             <spring:message code="l.student"/>
                                         </label>
                                         <div class="col-lg-10">
-                                            <select class="custom-select" name="owner" id="owner">
-                                                <option><spring:message code="l.choose.person"/></option>
+                                            <form:select class="custom-select" name="owner" id="owner" path="owner">
+                                                <option value="${null}"><spring:message
+                                                        code="l.choose.person"/></option>
                                                 <c:forEach items="${peoples}" var="owner">
                                                     <option value="${owner.id}">
                                                             ${owner.firstName} ${owner.lastName}
                                                     </option>
                                                 </c:forEach>
-                                            </select>
+                                            </form:select>
                                         </div>
-                                        <form:errors path="owner.id"
-                                                     cssClass="col-lg-10 offset-lg-2 offset-sm-0 text-danger small"/>
+                                        <form:errors path="owner"
+                                                     cssClass="col-lg-10 offset-lg-2 offset-sm-0 mt-2 text-danger small"/>
                                     </div>
 
                                     <!-- Deadline Date -->
@@ -68,7 +69,7 @@
                                             </div>
                                         </div>
                                         <form:errors path="deadline"
-                                                     cssClass="col-lg-10 offset-lg-2 offset-xs-0 text-danger small"/>
+                                                     cssClass="col-lg-10 offset-lg-2 offset-sm-0 text-danger small"/>
                                     </div>
 
                                     <!-- Task description -->
@@ -97,25 +98,35 @@
                             </label>
                             <div class="col-lg-10">
                                 <div class="form-check-inline mt-3">
-                                    <form:radiobutton path="level" class="form-check-input"
-                                                      value="JUNIOR" checked="checked"/>
-                                    <i class="btn btn-success btn-circle ml-2 mr-3">J</i> JUNIOR
+                                    <label class="form-check-label">
+                                        <form:radiobutton path="level" class="form-check-input"
+                                                          value="JUNIOR" checked="checked"/>
+                                        <i class="btn btn-success btn-circle ml-2 mr-3">J</i> JUNIOR
+                                    </label>
                                 </div>
                                 <div class="form-check-inline mt-3">
-                                    <form:radiobutton path="level" class="form-check-input" value="JUNIOR_PLUS"/>
-                                    <i class="btn btn-info btn-circle ml-2 mr-3">J+</i> JUNIOR PLUS
+                                    <label class="form-check-label">
+                                        <form:radiobutton path="level" class="form-check-input" value="JUNIOR_PLUS"/>
+                                        <i class="btn btn-info btn-circle ml-2 mr-3">J+</i> JUNIOR PLUS
+                                    </label>
                                 </div>
                                 <div class="form-check-inline mt-3">
-                                    <form:radiobutton path="level" class="form-check-input" value="MID"/>
-                                    <i class="btn btn-warning btn-circle ml-2 mr-3">M</i> MID
+                                    <label class="form-check-label">
+                                        <form:radiobutton path="level" class="form-check-input" value="MID"/>
+                                        <i class="btn btn-warning btn-circle ml-2 mr-3">M</i> MID
+                                    </label>
                                 </div>
                                 <div class="form-check-inline mt-3">
-                                    <form:radiobutton path="level" class="form-check-input" value="MID_PLUS"/>
-                                    <i class="btn btn-primary btn-circle ml-2 mr-3">M+</i> MID PLUS
+                                    <label class="form-check-label">
+                                        <form:radiobutton path="level" class="form-check-input" value="MID_PLUS"/>
+                                        <i class="btn btn-primary btn-circle ml-2 mr-3">M+</i> MID PLUS
+                                    </label>
                                 </div>
                                 <div class="form-check-inline mt-3">
-                                    <form:radiobutton path="level" class="form-check-input" value="SENIOR"/>
-                                    <i class="btn btn-danger btn-circle ml-2 mr-3">S</i> SENIOR
+                                    <label class="form-check-label">
+                                        <form:radiobutton path="level" class="form-check-input" value="SENIOR"/>
+                                        <i class="btn btn-danger btn-circle ml-2 mr-3">S</i> SENIOR
+                                    </label>
                                 </div>
                             </div>
                         </div>

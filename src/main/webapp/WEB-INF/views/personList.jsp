@@ -47,7 +47,7 @@
 
                         <div class="table-responsive">
 
-                            <table class="table action-panel table-bordered" id="dataTable" cellspacing="0">
+                            <table class="table action-panel table-bordered" id="dataTable">
                                 <thead>
                                 <tr>
                                     <th><spring:message code="l.name"/></th>
@@ -78,7 +78,7 @@
                                         </td>
 
                                         <td class="text-center">
-                                            <a href="<c:url value="/updatePerson/${person.id}"/>"
+                                            <a href="<c:url value="/update-student/${person.id}"/>"
                                                class="btn-right btn btn-primary" role="button">
                                                 <spring:message code="b.edit"/>
                                             </a>
@@ -212,7 +212,7 @@
 
                                                 <!-- Modal footer -->
                                                 <div class="modal-footer">
-                                                    <a href="<c:url value="/updatePerson/${person.id}"/>">
+                                                    <a href="<c:url value="/update-student/${person.id}"/>">
                                                         <input type="submit" class="btn btn-danger pull-left"
                                                                value="<spring:message code="b.change"/>"/>
                                                     </a>
@@ -239,10 +239,10 @@
 
             <!-- Add new person button -->
             <div class="card-header py-3">
-                <a href="<c:url value="/addNewPerson"/>" class="btn btn-info btn-icon-split">
-    <span class="icon text-white-50">
-    <i class="fas fa-info-circle"></i>
-    </span>
+                <a href="<c:url value="/add-student"/>" class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                    <i class="fas fa-info-circle"></i>
+                    </span>
                     <span class="text"><spring:message code="b.add.person"/></span>
                 </a>
             </div>

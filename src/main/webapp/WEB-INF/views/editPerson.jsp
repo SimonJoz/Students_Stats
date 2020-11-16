@@ -36,7 +36,7 @@
                                             <spring:message code="l.name"/>
                                         </label>
                                         <div class="col-lg-10">
-                                            <form:input path="firstName"  class="form-control" />
+                                            <form:input path="firstName" class="form-control"/>
                                             <form:errors path="firstName" cssClass="ml-1 text-danger small"/>
                                         </div>
                                     </div>
@@ -46,7 +46,7 @@
                                             <spring:message code="l.surname"/>
                                         </label>
                                         <div class="col-lg-10">
-                                            <form:input path="lastName"  class="form-control" />
+                                            <form:input path="lastName" class="form-control"/>
                                             <form:errors path="lastName" cssClass="ml-1 text-danger small"/>
                                         </div>
                                     </div>
@@ -80,7 +80,8 @@
                                         <div class="col-lg-1 col-md-2 col-sm-2 mt-3 ml-4">
                                             <label class="radio-inline">
                                                 <input class="form-check-input" type="radio" value="1" name="checkbox"
-                                                       data-toggle="collapse" data-target=".statModal:not(.show)" aria-expanded="true"
+                                                       data-toggle="collapse" data-target=".statModal:not(.show)"
+                                                       aria-expanded="true"
                                                        <c:if test="${person.checkbox eq 1}">checked</c:if>>
                                                 &nbsp;<spring:message code="l.yes"/>
                                             </label>
@@ -88,7 +89,8 @@
                                         <div class="col-lg-1 col-md-2 col-sm-2 ml-4 mt-3">
                                             <label class="radio-inline">
                                                 <input class="form-check-input" type="radio" value="0" name="checkbox"
-                                                       data-toggle="collapse" data-target=".statModal.show" aria-expanded="false"
+                                                       data-toggle="collapse" data-target=".statModal.show"
+                                                       aria-expanded="false"
                                                        <c:if test="${person.checkbox eq 0 ||
                                                             person.checkbox eq null}">checked</c:if>>
                                                 &nbsp;<spring:message code="l.no"/>
@@ -103,16 +105,16 @@
 
                         <!-- Statistics -->
                         <c:choose>
-                        <c:when test="${person.checkbox eq 1}">
-                            <div class="collapse show statModal" aria-expanded="true">
-                                <%@include file="dynamic/editTechStats.jsp"%>
-                            </div>
-                        </c:when>
-                        <c:otherwise>
-                            <div class="collapse statModal" aria-expanded="false">
-                                <%@include file="dynamic/editTechStats.jsp"%>
-                            </div>
-                        </c:otherwise>
+                            <c:when test="${person.checkbox eq 1}">
+                                <div class="collapse show statModal" aria-expanded="true">
+                                    <%@include file="dynamic/editTechStats.jsp" %>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="collapse statModal" aria-expanded="false">
+                                    <%@include file="dynamic/editTechStats.jsp" %>
+                                </div>
+                            </c:otherwise>
                         </c:choose>
                         <!-- End of Statistics -->
 
@@ -145,7 +147,7 @@
                         </div>
 
                         <!-- Modal footer -->
-                        <form name="send" method="post" action="<c:url value="/deletePerson/${person.id}"/>">
+                        <form name="send" method="post" action="<c:url value="/delete-student/${person.id}"/>">
                             <div class="modal-footer">
                                 <input type="submit" class="btn btn-danger pull-left"
                                        value="<spring:message code="b.delete"/>"/>

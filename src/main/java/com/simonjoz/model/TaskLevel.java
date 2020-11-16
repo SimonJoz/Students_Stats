@@ -3,7 +3,7 @@ package com.simonjoz.model;
 public enum TaskLevel {
     JUNIOR("success"),
     JUNIOR_PLUS("info"),
-    MID("dark"),
+    MID("warning"),
     MID_PLUS("primary"),
     SENIOR("danger");
 

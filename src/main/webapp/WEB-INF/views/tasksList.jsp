@@ -27,9 +27,9 @@
 
                 <!-- Add task button -->
                 <div class="card-body pt-1 pb-1 ">
-                    <a href="<c:url value="/addTask"/>" class="btn btn-warning btn-block" role="button">
-                        <i class="fas fa-exclamation-triangle text-white pb-1 pt-1">&nbsp;<spring:message
-                                code="b.add.task"/></i>
+                    <a href="<c:url value="/add-task"/>" class="btn btn-warning btn-block" role="button">
+                        <i class="fas fa-exclamation-triangle text-white pb-1 pt-1"></i>&nbsp;<spring:message
+                            code="b.add.task"/>
                     </a>
                 </div>
                 <!-- End of Add task button -->
@@ -40,55 +40,80 @@
                     <%-- Upper Legend --%>
                     <div class="row mb-3 text-white d-md-block d-lg-none">
                         <div class="row card-body justify-content-center text-center ">
-                            <div class="col-xs-2 card card-body bg-success d-inline-block">Junior</div>
-                            <div class="col-xs-2 card card-body bg-info d-inline-block">Junior +</div>
-                            <div class="col-xs-2 card card-body bg-dark d-inline-block">Mid</div>
-                            <div class="col-xs-2 card card-body bg-primary d-inline-block">Mid +</div>
-                            <div class="col-xs-2 card card-body bg-danger d-inline-block">Senior</div>
+                            <a class="btn btn-success p-0" href="<c:url value="/junior-tasks"/>">
+                                <div class="col-xs-2 card-body d-inline-block">Junior</div>
+                            </a>
+                            <a class=" btn btn-info p-0 ml-1" href="<c:url value="/junior-plus-tasks"/>">
+                                <div class="card-body d-inline-block">Junior +</div>
+                            </a>
+                            <a class="btn btn-warning p-0 ml-1" href="<c:url value="/mid-tasks"/>">
+                                <div class=" card-body d-inline-block">Mid</div>
+                            </a>
+                            <a class="btn btn-primary p-0 ml-1" href="<c:url value="/mid-plus-tasks"/>">
+                                <div class=" card-body d-inline-block">Mid +</div>
+                            </a>
+                            <a class="btn btn-danger p-0 ml-1" href="<c:url value="/senior-tasks"/>">
+                                <div class=" card-body d-inline-block">Senior</div>
+                            </a>
                         </div>
                     </div>
                     <%-- End of Upper Legend --%>
 
-                    <!-- Legend column -->
                     <div class="row">
+                        <!-- Legend column -->
                         <div class="col-lg-3 mr-auto text-white d-none d-lg-block">
-                            <div class="card align-items-center bg-success pt-3">
-                                <div class="card-body">
+                            <a class="btn btn-success col-md-11 mb-1" href="<c:url value="/junior-tasks"/>">
+                                <div class="card-body pb-1">
                                     <p class="h5"><spring:message code="junior"/></p class="h5">
                                     <p><spring:message code="l.level"/> Junior</p>
                                 </div>
-                            </div>
-                            <div class="card align-items-center bg-info pt-3">
-                                <div class="card-body">
+                            </a>
+
+                            <a class=" btn btn-info col-md-11 mb-1" href="<c:url value="/junior-plus-tasks"/>">
+                                <div class="card-body pb-1">
                                     <p class="h5"><spring:message code="junior.plus"/></p>
                                     <p><spring:message code="l.level"/>Junior +</p>
                                 </div>
-                            </div>
-                            <div class="card align-items-center bg-dark pt-3">
-                                <div class="card-body">
+                            </a>
+
+                            <a class="btn btn-warning col-md-11 mb-1" href="<c:url value="/mid-tasks"/>">
+                                <div class="card-body pb-1">
                                     <p class="h5"><spring:message code="mid"/></p>
                                     <p><spring:message code="l.level"/> Mid</p>
                                 </div>
-                            </div>
-                            <div class="card align-items-center bg-primary pt-3">
-                                <div class="card-body">
+                            </a>
+
+                            <a class="btn btn-primary col-md-11 mb-1" href="<c:url value="/mid-plus-tasks"/>">
+                                <div class="card-body pb-1">
                                     <p class="h5"><spring:message code="mid.plus"/></p>
                                     <p><spring:message code="l.level"/> Mid +</p>
                                 </div>
-                            </div>
-                            <div class="card align-items-center bg-danger pt-3">
-                                <div class="card-body">
+                            </a>
+
+                            <a class="btn btn-danger col-md-11 mb-1" href="<c:url value="/senior-tasks"/>">
+                                <div class="card-body pb-1">
                                     <p class="h5"><spring:message code="senior"/></p>
                                     <p><spring:message code="l.level"/> Senior</p>
                                 </div>
-                            </div>
+                            </a>
+
                         </div>
                         <!-- End of Legend column -->
+
                         <!-- Tasks column -->
                         <div class="col-lg-9">
                             <ul class="list-group">
+
+                                <c:if test="${tasks.size() == 0}">
+                                    <li class="card card-body h-50 border-dark pt-3">
+                                        <div class="row d-flex justify-content-center text-center">
+                                            <p class="h2 mt-2"><spring:message code="l.task.list.empty"/></p>
+                                        </div>
+                                    </li>
+                                </c:if>
                                 <c:forEach items="${tasks}" var="task">
                                     <li class="card card-body h-50 border border-left-${task.level.color} mb-3 pt-3">
+
                                         <!-- Tasks Content -->
                                         <div class="row">
                                             <div class="col-xl-9 col-lg-8">
@@ -119,10 +144,11 @@
                                                 </button>
                                             </div>
                                         </div>
-
                                         <!-- End of Task Content-->
-                                        <form name="submitChanges" method="post"
-                                              action="<c:url value="/updateTask/${task.id}"/>">
+
+                                        <form name="submitChanges" method="post" id="update-form"
+                                              action="<c:url value="/update-task/${task.id}"/>">
+
                                             <!-- Edit Task Modal -->
                                             <div class="modal fade" id="editModal${task.id}">
                                                 <div class="modal-dialog modal-lg">
@@ -189,6 +215,8 @@
                                                                      <i class="far fa-calendar-alt pt-1"></i>
                                                                 </span>
                                                                 </div>
+
+
                                                             </div>
 
                                                             <!-- Task description -->
@@ -303,7 +331,7 @@
 
                                                     <!-- Modal footer -->
                                                     <form name="deleteTask" method="post"
-                                                          action="<c:url value="/delete/${task.id}"/>">
+                                                          action="<c:url value="/delete-task/${task.id}"/>">
                                                         <div class="modal-footer">
                                                             <input type="submit" class="btn btn-danger pull-left"
                                                                    value="<spring:message code="b.delete"/>"/>

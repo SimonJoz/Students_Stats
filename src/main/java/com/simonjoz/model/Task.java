@@ -13,8 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Entity
-@Table(name = "tasks")
+@Entity(name = "tasks")
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,6 +28,7 @@ public class Task {
     @Enumerated(value = EnumType.STRING)
     private TaskLevel level;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "person_id")
     private Person owner;

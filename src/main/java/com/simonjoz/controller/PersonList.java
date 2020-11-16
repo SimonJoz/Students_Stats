@@ -23,44 +23,44 @@ public class PersonList {
         this.personRepo = personRepo;
     }
 
-    @GetMapping("/personList")
+    @GetMapping("students")
     public String personList(Model model) {
-        model.addAttribute("persons",personRepo.findAll());
-        return "/personList";
+        model.addAttribute("persons", personRepo.findAll());
+        return "personList";
     }
 
-    @GetMapping("/addNewPerson")
+    @GetMapping("add-student")
     public String getAddNewPersonView(@ModelAttribute("newPerson") Person person) {
         return "addNewPerson";
     }
 
-    @PostMapping("/addNewPerson")
+    @PostMapping("add-student")
     public String addNewPerson(@Valid @ModelAttribute("newPerson") Person newPerson, BindingResult result) {
         if (result.hasErrors()) {
             return "addNewPerson";
         }
         personRepo.save(newPerson);
-        return "redirect:/personList";
+        return "redirect:/students";
     }
 
-    @GetMapping("/updatePerson/{id}")
+    @GetMapping("update-student/{id}")
     public String getPersonForEdit(Model model, @PathVariable("id") Long id) {
-        model.addAttribute("person",  personRepo.getOne(id));
-        return "/editPerson";
+        model.addAttribute("person", personRepo.getOne(id));
+        return "editPerson";
     }
 
-    @PostMapping("/updatePerson/{id}")
+    @PostMapping("update-student/{id}")
     public String updatePerson(@Valid @ModelAttribute("person") Person updatedPerson, BindingResult result) {
         if (result.hasErrors()) {
-            return "/editPerson";
+            return "editPerson";
         }
         personRepo.save(updatedPerson);
-        return "redirect:/personList";
+        return "redirect:/students";
     }
 
-    @PostMapping("/deletePerson/{id}")
+    @PostMapping("delete-student/{id}")
     public String deletePerson(@PathVariable("id") Long id) {
         personRepo.deleteById(id);
-        return "redirect:/personList";
+        return "redirect:/students";
     }
 }

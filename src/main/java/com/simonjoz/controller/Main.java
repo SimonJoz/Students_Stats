@@ -20,7 +20,21 @@ public class Main {
     public String countStudents(Model model) {
         model.addAttribute("studentsCount", personRepo.count());
         return "index";
+    }
 
+    @GetMapping("course")
+    public String getCourse() {
+        return "course";
+    }
+
+    @GetMapping("technologies")
+    public String getTechnologies() {
+        return "technologies";
+    }
+
+    @GetMapping("/error")
+    public String error() {
+        return "error";
     }
 
 }

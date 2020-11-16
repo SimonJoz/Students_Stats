@@ -38,7 +38,7 @@
                                     <!-- Name -->
                                     <div class="form-group row">
                                         <label for="firstName" class="col-lg-2 col-form-label">
-                                            <spring:message code="l.name" />
+                                            <spring:message code="l.name"/>
                                         </label>
                                         <div class="col-lg-10">
                                             <spring:message code="p.name" var="msg"/>
@@ -50,7 +50,7 @@
                                     <!-- Surname -->
                                     <div class="form-group row">
                                         <label for="lastName" class="col-lg-2 col-form-label">
-                                            <spring:message code="l.surname" />
+                                            <spring:message code="l.surname"/>
                                         </label>
                                         <div class="col-lg-10">
                                             <spring:message code="p.surname" var="msg"/>
@@ -77,7 +77,8 @@
                                         </label>
                                         <div class="col-lg-10">
                                             <spring:message code="p.start" var="msg"/>
-                                            <form:textarea class="form-control" path="start" rows="5" placeholder="${msg}"/>
+                                            <form:textarea class="form-control" path="start" rows="5"
+                                                           placeholder="${msg}"/>
                                         </div>
                                     </div>
 

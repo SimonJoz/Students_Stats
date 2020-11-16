@@ -124,7 +124,7 @@
             <div class="jumbotron">
                 <h1><spring:message code="l.project"/></h1>
                 <p>Bootstrap + JSP + Spring Boot + MySQL</p>
-                <p><spring:message code="l.today"/><fmt:formatDate type = "date" value = "${now}" />.</p>
+                <p><spring:message code="l.today"/><fmt:formatDate type="date" value="${now}"/>.</p>
             </div>
             <!-- End of content body-->
 
@@ -142,10 +142,10 @@
 <!-- End of Page Wrapper -->
 
 <!-- Scroll to Top Button-->
-<%@include file="dynamic/scrollTop.jsp"%>
+<%@include file="dynamic/scrollTop.jsp" %>
 
 <!-- Logout Modal-->
-<%@include file="dynamic/logoutModal.jsp"%>
+<%@include file="dynamic/logoutModal.jsp" %>
 
 <%--Js scripts--%>
 <%@include file="dynamic/scriptsLinks.jsp" %>

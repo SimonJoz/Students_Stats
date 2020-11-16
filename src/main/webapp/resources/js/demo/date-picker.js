@@ -648,9 +648,8 @@
 }(window.jQuery);
 
 
-
- // date-picker
-$(document).ready(function(){
+// date-picker
+$(document).ready(function () {
     let date_input = $('input[name="deadline"]'); //our date input has the name "deadline"
     let container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
     let options = {

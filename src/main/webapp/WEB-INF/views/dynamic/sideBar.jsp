@@ -24,7 +24,7 @@
 
     <!-- Nav Item - Kursanci -->
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/personList"/>">
+        <a class="nav-link" href="<c:url value="/students"/>">
             <i class="fas fa-users"></i>
             <span><spring:message code="students.list"/></span>
         </a>
@@ -41,7 +41,7 @@
 
     <!-- Nav Item - Tasks -->
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/tasksList"/>">
+        <a class="nav-link" href="<c:url value="/tasks"/>">
             <i class="fas fa-clipboard-list"></i>
             <span><spring:message code="tasks.list"/></span>
         </a>
@@ -50,7 +50,7 @@
 
     <!-- Nav Item - Technologie -->
     <li class="nav-item">
-        <a class="nav-link" href="<c:url value="/technology"/>">
+        <a class="nav-link" href="<c:url value="/technologies"/>">
             <i class="fas fa-cogs"></i>
             <span><spring:message code="technologies"/></span>
         </a>
